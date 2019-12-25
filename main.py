@@ -29,5 +29,12 @@ def main(min_value, max_value):
 
 if __name__=="__main__":
     min_max = sys.argv[1].split("-")
-    total = main(int(min_max[0]), int(min_max[1]))
+    assert len(min_max) == 2, "Expecting input on format <min>-<max>"
+    try:
+        min_range = int(min_max[0])
+        max_range = int(min_max[1])
+    except:
+        print("Input arguments must be integers")
+        sys.exit(-1)
+    total = main(min_range, max_range)
     print(f"Total: {total}")
