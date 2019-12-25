@@ -6,11 +6,7 @@ def test_has_double_adjacent_digits(value):
     for i in range(len(value)):
         v = int(value[i])
         number_histogram[v] = number_histogram[v] + 1
-    for i in range(len(number_histogram)):
-        if number_histogram[i] == 2:
-            return True
-    else:
-        return False
+    return 2 in number_histogram
 
 def test_does_not_decrease(value):
     last_v = value[0]
@@ -22,7 +18,7 @@ def test_does_not_decrease(value):
         return True
 
 def test(value):
-    return len(value) == 6 and test_has_double_adjacent_digits(value) and test_does_not_decrease(value)
+    return test_does_not_decrease(value) and test_has_double_adjacent_digits(value) and len(value) == 6
 
 def main(min_value, max_value):
     total = 0
