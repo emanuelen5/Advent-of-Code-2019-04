@@ -17,13 +17,13 @@ def test_does_not_decrease(value):
     else:
         return True
 
-def test(value):
+def check(value):
     return test_does_not_decrease(value) and test_has_double_adjacent_digits(value) and len(value) == 6
 
 def main(min_value, max_value):
     total = 0
     for value in range(min_value, max_value+1):
-        if test(str(value)):
+        if check(str(value)):
             total = total + 1
     return total
 
