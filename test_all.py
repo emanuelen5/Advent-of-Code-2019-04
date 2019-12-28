@@ -1,7 +1,7 @@
 from main import check
 import unittest
 
-class TestAOC2019_04(unittest.TestCase):
+class TestAOC(unittest.TestCase):
     def test_examples(self):
         self.assertTrue(check("112233"))
         self.assertFalse(check("123444"))
